@@ -9,11 +9,19 @@
 namespace Alimranahmed\LaraOCR\Services;
 
 
-class Tesseract extends OCRInterface
+class Tesseract extends OcrAbstract
 {
 
-    public function scan($imagePath) {
-        // TODO: Implement scan() method.
+    protected $command;
 
+    public function scan($imagePath) {
+
+        $this->setImagePath($imagePath);
+        $shell = new Shell();
+
+        $executable = config('lara_ocr.engines.tesseract.executable');
+        $command = trim("$executable $imagePath stdout quiet");
+//        dd($command);
+        return $shell->execute($command);
     }
 }

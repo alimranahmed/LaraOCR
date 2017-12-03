@@ -9,11 +9,18 @@
 namespace Alimranahmed\LaraOCR\Controllers;
 
 
+use Alimranahmed\LaraOCR\Services\OcrAbstract;
+use Alimranahmed\LaraOCR\Services\Tesseract;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Artisan;
 
 class OcrController extends Controller
 {
     public function read(){
-        dd('Welcome to Lara OCR');
+        $ocr = app()->make(OcrAbstract::class);
+
+        $imagePath = resource_path('lara_ocr/sampleImages/1.jpg');
+
+        return $ocr->scan($imagePath);
     }
 }

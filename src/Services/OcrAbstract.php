@@ -9,25 +9,31 @@
 namespace Alimranahmed\LaraOCR\Services;
 
 
-use File;
 
-abstract class OCRInterface
+use Illuminate\Support\Facades\File;
+
+abstract class OcrAbstract
 {
     protected $imagePath;
+
+    protected $image;
 
     protected $outputText;
 
     public abstract function scan($imagePath);
 
     public function setImagePath($imagePath){
-        if(!File::exist()){
-            throw new \InvalidArgumentException('No image exists in the specified path');
-        }
+        $this->image = new \Symfony\Component\HttpFoundation\File\File($imagePath);
         $this->imagePath = $imagePath;
+        return $this->image;
     }
 
     public function getImagePath(){
         return $this->imagePath;
+    }
+
+    public function getImage(){
+        return $this->image;
     }
 
     public function getOutput(){
