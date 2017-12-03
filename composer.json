@@ -1,0 +1,12 @@
+{
+    "name": "alimranahmed/laraocr",
+    "description": "Laravel Optical Character Reader(OCR) package using different ocr engines like Tesseract",
+    "license": "Apache 2.0",
+    "authors": [
+        {
+            "name": "Al- Imran Ahmed",
+            "email": "al.imran.cse@gmail.com"
+        }
+    ],
+    "require": {}
+}
