@@ -14,6 +14,6 @@ use App\Http\Controllers\Controller;
 class OcrController extends Controller
 {
     public function read(){
-        dd('Welcome to awesome OCR');
+        dd('Welcome to Lara OCR');
     }
 }
