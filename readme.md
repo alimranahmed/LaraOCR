@@ -11,9 +11,13 @@ Laravel Optical Character Reader(OCR) package using different ocr engines. E.g. 
 OCR Engine Tesseract should be install in the system(e.g. for ubuntu `sudo apt-get install tesseract-ocr`). Follow Tesseract installation guide [here](https://github.com/tesseract-ocr/tesseract/wiki#installation). Make sure from the command line you have the `tesseract` command available. 
  
 ## Installation 
-1. From your laravel project root exececute the following line in CLI(e.g. Terminal):
+1. Update your project's `composer.json` file as bellow:
 
-    ```composer require ```
+    ```
+    "required": {
+        "alimranahmed/laraocr": "dev-master"
+    }
+    ```
     
 2. execute the following command to publish all relevant files:
 
