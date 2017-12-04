@@ -1,16 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: imran
- * Date: 03/12/2017
- * Time: 19:34
- */
 
 namespace Alimranahmed\LaraOCR\Services;
 
 
 
-use Illuminate\Support\Facades\File;
+use \Symfony\Component\HttpFoundation\File\File;
 
 abstract class OcrAbstract
 {
@@ -23,7 +17,7 @@ abstract class OcrAbstract
     public abstract function scan($imagePath);
 
     public function setImagePath($imagePath){
-        $this->image = new \Symfony\Component\HttpFoundation\File\File($imagePath);
+        $this->image = new File($imagePath);
         $this->imagePath = $imagePath;
         return $this->image;
     }
