@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "LaraOCR\\": "src"
+            "Alimranahmed\\LaraOCR\\": "src"
         }
     },
     "autoload-dev": {
