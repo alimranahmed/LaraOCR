@@ -1,5 +1,5 @@
 ## LaraOCR
-Laravel Optical Character Reader(OCR) package using different ocr engines. E.g. [Tesseract](https://github.com/tesseract-ocr/tesseract) under the hood. 
+Laravel Optical Character Reader(OCR) package using ocr engines like [Tesseract](https://github.com/tesseract-ocr/tesseract) under the hood. 
 
 ## Features
 1. Read text from image using WebUI/Programing Interface
