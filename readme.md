@@ -14,7 +14,7 @@ OCR Engine Tesseract should be install in the system(e.g. for ubuntu `sudo apt-g
 1. Update your project's `composer.json` file as bellow:
 
     ```
-    "required": {
+    "require": {
         "alimranahmed/laraocr": "dev-master"
     }
     ```
