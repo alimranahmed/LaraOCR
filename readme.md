@@ -18,6 +18,7 @@ OCR Engine Tesseract should be install in the system(e.g. for ubuntu `sudo apt-g
         "alimranahmed/laraocr": "dev-master"
     }
     ```
+    then execute `composer update`
     
 2. execute the following command to publish all relevant files:
 
@@ -27,10 +28,10 @@ OCR Engine Tesseract should be install in the system(e.g. for ubuntu `sudo apt-g
 
 3. Add the following line in the `providers` array of `config/app.php`
     ```
-    \Alimranahmed\LaraOCR\LaraOCRServiceProvider::class,
+    Alimranahmed\LaraOCR\LaraOCRServiceProvider::class,
     ```
     
-    and following line in the `allias` arrays of the same file
+    and following line in the `allias` array of the same file
     
     ```
     'OCR' => Alimranahmed\LaraOCR\Facades\OCR::class,
