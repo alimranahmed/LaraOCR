@@ -1,26 +1,37 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: imran
- * Date: 03/12/2017
- * Time: 18:54
- */
 
 namespace Alimranahmed\LaraOCR\Controllers;
 
 
 use Alimranahmed\LaraOCR\Services\OcrAbstract;
-use Alimranahmed\LaraOCR\Services\Tesseract;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Artisan;
 
 class OcrController extends Controller
 {
-    public function read(){
-        $ocr = app()->make(OcrAbstract::class);
+    protected $ocr;
+
+    public function __construct() {
+        //$this->ocr = app()->make(OcrAbstract::class);
+    }
+
+    public function test(){
 
         $imagePath = resource_path('lara_ocr/sampleImages/1.jpg');
+        //$this->ocr = app()->make(OcrAbstract::class);
+        return \OCR::scan($imagePath);
+        return $this->ocr->scan($imagePath);
+    }
 
-        return $ocr->scan($imagePath);
+    public function home(){
+        return view('lara_ocr/upload_image');
+    }
+
+    public function readImage(){
+        $image = request('image');
+        if(isset($image) && $image->getPathName()){
+            $this->ocr = app()->make(OcrAbstract::class);
+            $parsedText = $this->ocr->scan($image->getPathName());
+            return view('lara_ocr.parsed_text', compact('parsedText'));
+        }
     }
 }
