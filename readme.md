@@ -46,16 +46,23 @@ From anywhere of your code you can simply access the `OCR` facade to scan image 
 After successful installation of this package we already have a web interface to parse text from image. Simply go to `{project-url}/ocr`, select your image then click the `Parse Image` button. 
 
 ![select_image](https://user-images.githubusercontent.com/7629427/33532834-fa434742-d894-11e7-8cce-65afb26a8af0.png)
+
 **Upload Image**
 
 
 
+
+
 ![selected_image](https://user-images.githubusercontent.com/7629427/33533003-5487324e-d896-11e7-8b89-eb8fd5aa5e83.png)
+
 **Uploaded Image**
 
 
 
+
+
 ![output](https://user-images.githubusercontent.com/7629427/33533013-63d7b1a6-d896-11e7-8a3b-badd2203ae83.png)
+
 **Parsed text**
 
 ## Wish list
