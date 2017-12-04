@@ -1,6 +1,6 @@
 {
     "name": "alimranahmed/laraocr",
-    "description": "Laravel Optical Character Reader(OCR) package using different ocr engines like Tesseract",
+    "description": "Laravel Optical Character Reader(OCR) package using different OCR engines like Tesseract",
     "license": "Apache 2.0",
     "authors": [
         {

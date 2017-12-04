@@ -24,5 +24,6 @@
 <div class="container">
     @yield('content')
 </div>
+<div style="text-align: center; margin-top: 20px;">Copyright {{date('Y')}}, Al Imran Ahmed</div>
 </body>
 </html>
