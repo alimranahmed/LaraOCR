@@ -13,7 +13,7 @@ class Tesseract extends OcrAbstract
         $this->setImagePath($imagePath);
         $shell = new Shell();
 
-        $executable = config('lara_ocr.engines.tesseract.executable');
+        $executable = config('lara_ocr.engines.tesseract.executable', 'tesseract');
 
         $command = trim("$executable $imagePath stdout quiet");
 

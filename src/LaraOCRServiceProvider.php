@@ -4,7 +4,6 @@ namespace Alimranahmed\LaraOCR;
 
 use Alimranahmed\LaraOCR\Controllers\OcrController;
 use Alimranahmed\LaraOCR\Services\OcrAbstract;
-use Alimranahmed\LaraOCR\Services\Tesseract;
 use Illuminate\Support\ServiceProvider;
 
 class LaraOCRServiceProvider extends ServiceProvider
@@ -38,8 +37,16 @@ class LaraOCRServiceProvider extends ServiceProvider
 
         $this->app->make(OcrController::class);
 
-        $this->app->singleton(OcrAbstract::class, Tesseract::class);
+        $this->app->singleton(OcrAbstract::class, function(){return $this->resolvedEngineClass();});
 
-        $this->app->singleton('OCR', Tesseract::class);
+        $this->app->singleton('OCR', function(){return $this->resolvedEngineClass();});
+    }
+
+    private function resolvedEngineClass(){
+        $namespace = 'Alimranahmed\LaraOCR\Services';
+        $ocrEngine = config('lara_ocr.ocr_engine');
+        $engineClass = config("lara_ocr.engines.{$ocrEngine}.class", 'Tesseract');
+        $fullClassPath = "$namespace\\$engineClass";
+        return new $fullClassPath();
     }
 }
