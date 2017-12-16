@@ -24,5 +24,13 @@
         }
     },
     "extra": {
+        "laravel": {
+            "providers": [
+                "Alimranahmed\\LaraOCR\\LaraOCRServiceProvider"
+            ],
+            "aliases": {
+                "OCR": "Alimranahmed\\LaraOCR\\Facades\\OCR"
+            }
+        }
     }
 }
