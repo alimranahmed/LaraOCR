@@ -71,8 +71,8 @@ After successful installation of this package we already have a web interface to
 **Parsed text**
 
 ## Wish list
+- [x] Artisan command to read image and show parsed text from CLI
 - [ ] Restful API to accept image and return parsed text
-- [ ] Artisan command to read image and show parsed text from CLI
 - [ ] Multilingual support
 - [ ] Adding More options which are already available in OCR engines 
 

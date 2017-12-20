@@ -2,6 +2,7 @@
 
 namespace Alimranahmed\LaraOCR;
 
+use Alimranahmed\LaraOCR\Commands\ImageParsing;
 use Alimranahmed\LaraOCR\Controllers\OcrController;
 use Alimranahmed\LaraOCR\Services\OcrAbstract;
 use Illuminate\Support\ServiceProvider;
@@ -15,7 +16,11 @@ class LaraOCRServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                ImageParsing::class,
+            ]);
+        }
     }
 
     /**
