@@ -3,7 +3,6 @@
     "type": "library",
     "keywords": ["ocr", "image", "data"],
     "description": "Laravel Optical Character Reader(OCR) package using different OCR engines like Tesseract",
-    "license": "Apache 2.0",
     "authors": [
         {
             "name": "Al- Imran Ahmed",
