@@ -77,7 +77,11 @@ After successful installation of this package we already have a web interface to
 - [ ] Adding More options which are already available in OCR engines 
 
 ### Contribution 
-Anyone is always welcome to contribute on the project. If you want to work with, just create and issue(even if you want to fix the issue). After fixing any issue or adding any new feature just send a pull request, I will be happy to add your code for the betterment of this project. Thanks.
+**Anyone is always welcome to contribute on the project. If you want to work with:**
+1. Just create and issue(even if you want to fix the issue). 
+2. After fixing any issue or adding any new feature just send a pull request
+3. I will be happy to add your code for the betterment of this project. 
+Thanks..
 
 ## License
 This package is licensed under [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
