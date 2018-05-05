@@ -11,31 +11,16 @@ Laravel Optical Character Reader(OCR) package using ocr engines like [Tesseract]
 OCR Engine Tesseract should be install in the system(e.g. for ubuntu `sudo apt-get install tesseract-ocr`). Follow Tesseract installation guide [here](https://github.com/tesseract-ocr/tesseract/wiki#installation). Make sure from the command line you have the `tesseract` command available. 
  
 ## Installation 
-1. Update your project's `composer.json` file as bellow:
+Update your project's `composer.json` file as bellow:
 
-    ```
-    "require": {
-        "alimranahmed/laraocr": "dev-master"
-    }
-    ```
-    then execute `composer update`
+```
+"require": {
+    "alimranahmed/laraocr": "dev-master"
+}
+```
+then execute `composer update`
     
-2. execute the following command to publish all relevant files:
-
-    ```
-    php artisan vendor:publish
-    ```
-
-3. Add the following line in the `providers` array of `config/app.php`
-    ```
-    Alimranahmed\LaraOCR\LaraOCRServiceProvider::class,
-    ```
-    
-    and following line in the `allias` array of the same file
-    
-    ```
-    'OCR' => Alimranahmed\LaraOCR\Facades\OCR::class,
-    ``` 
+That's All!
 
 ## Usages
 This package can be used to read text from image to text using different type of interface like Web and Programming. 
@@ -75,6 +60,13 @@ After successful installation of this package we already have a web interface to
 - [ ] Restful API to accept image and return parsed text
 - [ ] Multilingual support
 - [ ] Adding More options which are already available in OCR engines 
+
+### Contribution 
+**Anyone is always welcome to contribute on the project. If you want to work with:**
+1. Just create and issue(even if you want to fix the issue). 
+2. After fixing any issue or adding any new feature just send a pull request
+3. I will be happy to add your code for the betterment of this project. 
+Thanks..
 
 ## License
 This package is licensed under [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
