@@ -1,3 +1,8 @@
+[![Latest Stable Version](https://poser.pugx.org/alimranahmed/laraocr/v/stable)](https://packagist.org/packages/alimranahmed/laraocr)
+[![License](https://poser.pugx.org/alimranahmed/laraocr/license)](https://packagist.org/packages/alimranahmed/laraocr)
+[![Total Downloads](https://poser.pugx.org/alimranahmed/laraocr/downloads)](https://packagist.org/packages/alimranahmed/laraocr)
+[![Latest Unstable Version](https://poser.pugx.org/alimranahmed/laraocr/v/unstable)](https://packagist.org/packages/alimranahmed/laraocr)
+
 ## LaraOCR
 Laravel Optical Character Reader(OCR) package using ocr engines like [Tesseract](https://github.com/tesseract-ocr/tesseract) under the hood. 
 
