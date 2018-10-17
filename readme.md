@@ -16,14 +16,14 @@ Laravel Optical Character Reader(OCR) package using ocr engines like [Tesseract]
 OCR Engine Tesseract should be install in the system(e.g. for ubuntu `sudo apt-get install tesseract-ocr`). Follow Tesseract installation guide [here](https://github.com/tesseract-ocr/tesseract/wiki#installation). Make sure from the command line you have the `tesseract` command available. 
  
 ## Installation 
-Update your project's `composer.json` file as bellow:
+Execute the following command in your terminal while you are in the root directory of your Laravel project to install
+ this package:
 
+```php
+composer install alimranahmed/laraocr
 ```
-"require": {
-    "alimranahmed/laraocr": "dev-master"
-}
-```
-then execute `composer update`
+
+Then, publish this package using `php artisan vendor:publish` command
     
 That's All!
 
@@ -33,7 +33,7 @@ This package can be used to read text from image to text using different type of
 ##### Programming
 From anywhere of your code you can simply access the `OCR` facade to scan image as below:
 
-```
+```php
 \OCR::scan($imagePath);
 ```
 
