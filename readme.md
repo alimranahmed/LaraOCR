@@ -19,8 +19,8 @@ OCR Engine Tesseract should be install in the system(e.g. for ubuntu `sudo apt-g
 Execute the following command in your terminal while you are in the root directory of your Laravel project to install
  this package:
 
-```php
-composer install alimranahmed/laraocr
+```
+composer require alimranahmed/laraocr
 ```
 
 Then, publish this package using `php artisan vendor:publish` command
