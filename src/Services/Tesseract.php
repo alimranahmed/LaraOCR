@@ -36,7 +36,11 @@ class Tesseract extends OcrAbstract
         $this->setImagePath($imagePath);
         $shell = new Shell();
 
-        $langParam = ($lang !== null) ? ' -l '.$lang : '';
+        if ($this->languageSupported($lang)) {
+            $langParam = ' -l '.$lang;
+        } else {
+            $langParam = '';
+        }
 
         $command = trim($this->getExecutable().$langParam.' '.$imagePath.' stdout quiet');
 
