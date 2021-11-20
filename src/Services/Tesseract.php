@@ -9,7 +9,7 @@ class Tesseract extends OcrAbstract
     public function scan($imagePath, $lang = null)
     {
         if ($lang === null) {
-            $lang = env('OCR_LANG');
+            $lang = config('lara_ocr.engines.tesseract.language');
         }
         $this->setImagePath($imagePath);
         $shell = new Shell();
