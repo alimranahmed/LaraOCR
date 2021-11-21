@@ -23,7 +23,7 @@ class Tesseract extends OcrAbstract
         return $langArray;
     }
 
-    public function languageSupported($lang)
+    public function isLanguageSupported($lang)
     {
         return in_array($lang, $this->supportedLanguages());
     }
@@ -36,7 +36,7 @@ class Tesseract extends OcrAbstract
         $this->setImagePath($imagePath);
         $shell = new Shell();
 
-        if ($this->languageSupported($lang)) {
+        if ($this->isLanguageSupported($lang)) {
             $langParam = ' -l '.$lang;
         } else {
             $langParam = '';
