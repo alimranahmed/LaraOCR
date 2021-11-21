@@ -9,6 +9,7 @@ return [
         'tesseract' => [
             'class' => 'Tesseract',
             'executable' => 'tesseract',
+            'language' => env('OCR_LANG'),
         ],
     ],
 ];

@@ -6,22 +6,44 @@ class Tesseract extends OcrAbstract
 {
     protected $command;
 
+    protected function getExecutable()
+    {
+        return config('lara_ocr.engines.tesseract.executable', 'tesseract');
+    }
+
+    public function supportedLanguages()
+    {
+        $shell = new Shell();
+
+        $command = trim($this->getExecutable().' --list-langs');
+
+        $langArray = explode("\n", $shell->execute($command));
+        array_shift($langArray);  // remove heading "List of available languages" from command result
+        
+        return $langArray;
+    }
+
+    public function isLanguageSupported($lang)
+    {
+        return in_array($lang, $this->supportedLanguages());
+    }
+
     public function scan($imagePath, $lang = null)
     {
         if ($lang === null) {
-            $lang = env('OCR_LANG');
+            $lang = config('lara_ocr.engines.tesseract.language');
         }
         $this->setImagePath($imagePath);
         $shell = new Shell();
 
-        $executable = config('lara_ocr.engines.tesseract.executable', 'tesseract');
-        $langParam = ($lang !== null) ? ' -l '.$lang : '';
+        if ($this->isLanguageSupported($lang)) {
+            $langParam = ' -l '.$lang;
+        } else {
+            $langParam = '';
+        }
 
-        $command = trim($executable.$langParam.' '.$imagePath.' stdout quiet');
+        $command = trim($this->getExecutable().$langParam.' '.$imagePath.' stdout quiet');
 
         return $shell->execute($command);
     }
-    
-    // ToDo: implement function listLangs(): array
-    // ToDo: implement function langSupported(string $lang): bool
 }
