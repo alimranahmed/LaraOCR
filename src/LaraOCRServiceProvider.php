@@ -32,7 +32,7 @@ class LaraOCRServiceProvider extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__.'/routes.php');
 
-        $this->loadViewsFrom(__DIR__.'../views/lara_ocr', 'lara_ocr');
+        $this->loadViewsFrom(__DIR__.'/../views/lara_ocr', 'lara_ocr');
 
         $this->publishes([
             __DIR__ . '/../config/lara_ocr.php' => config_path('lara_ocr.php'),
